@@ -1,6 +1,6 @@
-# GestionAlumnos
+## GestionAlumnos
 
-GestionAlumnos es una aplicación para la gestión de alumnos.
+CRUD para de gestión de alumnos.
 
 ## Instalación
 
@@ -8,43 +8,21 @@ Para comenzar, asegúrate de tener [Composer](https://getcomposer.org/) para las
 
 1. Clona este repositorio:
 
-    Instala las dependencias de PHP con Composer:
+    Instala las dependencias de PHP con Composer: composer install
+
+2. Instala las dependencias de JavaScript con npm: npm install.
+
+3.Configura la base de datos MySQL en el archivo .env.
 
 
-
-composer install
-
- Instala las dependencias de JavaScript con npm:
-
-bash
-
-npm install
-
-Configura la base de datos MySQL en el archivo .env:
-
-makefile
-
-#DB_CONNECTION=mysql
-#DB_HOST=127.0.0.1
-#DB_PORT=3306
-#DB_DATABASE=gestion_alumnos
-#DB_USERNAME=root
-#DB_PASSWORD=
-
- Ejecuta las migraciones para crear las tablas en la base de datos:
-php artisan migrate
+4.Ejecuta las migraciones para crear las tablas en la base de datos: php artisan migrate
 
 
 Una vez que hayas instalado las dependencias y configurado la base de datos, puedes ejecutar el servidor backend y frontend para comenzar a usar la aplicación.
 Backend
 
-Para iniciar el servidor backend, ejecuta el siguiente comando en la terminal:
-
-php artisan serve
+Para iniciar el servidor backend, ejecuta el siguiente comando en la terminal: php artisan serve
 
 Esto iniciará el servidor backend y podrás acceder a la API en http://localhost:8000.
-Frontend
 
-Para compilar y ejecutar el frontend, ejecuta el siguiente comando en otra terminal:
-
-npm run dev
+Para compilar y ejecutar el frontend, ejecuta el siguiente comando en otra terminal: npm run dev
