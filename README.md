@@ -1,6 +1,6 @@
 ## GestionAlumnos
 
-CRUD para la gestión de alumnos.
+CRUD para la gestión de alumnos realizada con PHP 8.1, Laravel 11 y VueJs 3.4.0.
 
 ## Instalación
 
