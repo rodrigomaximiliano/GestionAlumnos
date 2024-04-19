@@ -1,6 +1,6 @@
 ## GestionAlumnos
 
-CRUD para de gestión de alumnos.
+CRUD para la gestión de alumnos.
 
 ## Instalación
 
