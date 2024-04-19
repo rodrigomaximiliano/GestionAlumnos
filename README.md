@@ -14,13 +14,13 @@ Para comenzar, asegúrate de tener [Composer](https://getcomposer.org/) para las
 
 composer install
 
-    Instala las dependencias de JavaScript con npm:
+ Instala las dependencias de JavaScript con npm:
 
 bash
 
 npm install
 
-    Configura la base de datos MySQL en el archivo .env:
+Configura la base de datos MySQL en el archivo .env:
 
 makefile
 
@@ -31,7 +31,7 @@ makefile
 #DB_USERNAME=root
 #DB_PASSWORD=
 
-    Ejecuta las migraciones para crear las tablas en la base de datos:
+ Ejecuta las migraciones para crear las tablas en la base de datos:
 php artisan migrate
 
 
