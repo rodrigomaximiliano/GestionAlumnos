@@ -24,4 +24,4 @@ Para iniciar el servidor backend, ejecuta el siguiente comando en la terminal: p
 
 Esto iniciará el servidor backend y podrás acceder a la API en http://localhost:8000.
 
-Para compilar y ejecutar el frontend, ejecuta el siguiente comando en otra terminal: npm run dev
+Para compilar y ejecutar el frontend, ejecuta el siguiente comando en otra terminal: npm run dev.
