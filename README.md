@@ -32,6 +32,3 @@ Para compilar y ejecutar el frontend, ejecuta el siguiente comando en otra termi
 ![Captura de pantalla 2024-04-22 162238](https://github.com/rodrigomaximiliano/GestionAlumnos/assets/116413011/95f6dee8-698d-43cd-8d6c-0e8889c0308e)
 
 
-
-
-![Captura de pantalla 2024-04-22 162318](https://github.com/rodrigomaximiliano/GestionAlumnos/assets/116413011/8a6526b9-ed21-4776-8011-bd2853974fa8)
