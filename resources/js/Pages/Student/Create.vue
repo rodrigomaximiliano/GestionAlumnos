@@ -41,12 +41,12 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Students" />
+    <Head title="Gestión Estudiante" />
 
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Students
+                Estudiantes
             </h2>
         </template>
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -59,10 +59,10 @@ const submit = () => {
                                     <h3
                                         class="text-lg leading-6 font-medium text-gray-900"
                                     >
-                                        Student Information
+                                       Información del estudiante
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-500">
-                                        Use this form to create a new student.
+                                        Utilice este formulario para agregar un nuevo estudiante.
                                     </p>
                                 </div>
 
@@ -71,13 +71,13 @@ const submit = () => {
                                         <label
                                             for="name"
                                             class="block text-sm font-medium text-gray-700"
-                                            >Name</label
+                                            >Nombre</label
                                         >
                                         <input
                                             v-model="form.name"
                                             type="text"
                                             id="name"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             :class="{
                                                 'text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300':
                                                     form.errors.name,
@@ -100,7 +100,7 @@ const submit = () => {
                                             type="email"
                                             id="email"
                                             autocomplete="email"
-                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             :class="{
                                                 'text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300':
                                                     form.errors.email,
@@ -116,27 +116,23 @@ const submit = () => {
                                         <label
                                             for="class_id"
                                             class="block text-sm font-medium text-gray-700"
-                                            >Class</label
+                                            >Clase</label
                                         >
                                         <select
                                             v-model="form.class_id"
                                             id="class_id"
-                                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             :class="{
                                                 'text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300':
                                                     form.errors.class_id,
                                             }"
                                         >
                                             <option value="">
-                                                Select a Class
+                                                Seleccione una Clase
                                             </option>
-                                            <option
-                                                v-for="item in classes.data"
-                                                :key="item.id"
-                                                :value="item.id"
-                                            >
-                                                {{ item.name }}
-                                            </option>
+                                            <option value="PHP Laravel Vue">PHP Laravel Vue</option>
+                                            <option value="Node.js React.js">Node.js React.js</option>
+                                            <option value=".NET Angular">.NET Angular</option>
                                         </select>
                                         <InputError
                                             class="mt-2"
@@ -148,22 +144,23 @@ const submit = () => {
                                         <label
                                             for="section_id"
                                             class="block text-sm font-medium text-gray-700"
-                                            >Section</label
+                                            >Sección</label
                                         >
                                         <select
                                             v-model="form.section_id"
                                             id="section_id"
-                                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            class="mt-1 block w-full bg-white border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm"
                                             :class="{
                                                 'text-red-900 focus:ring-red-500 focus:border-red-500 border-red-300':
                                                     form.errors.section_id,
                                             }"
                                         >
                                             <option value="">
-                                                Select a Section
+                                                Seleccione una Sección
                                             </option>
                                             <option
                                                 v-for="section in sections.data"
+                                                :key="section.id"
                                                 :value="section.id"
                                             >
                                                 {{ section.name }}
@@ -181,15 +178,15 @@ const submit = () => {
                             >
                                 <Link
                                     :href="route('students.index')"
-                                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-4"
+                                    class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-green-700 bg-green-100 hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 mr-4"
                                 >
-                                    Cancel
+                                    Cancelar
                                 </Link>
                                 <button
                                     type="submit"
-                                    class="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    class="bg-green-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
                                 >
-                                    Save
+                                    Guardar
                                 </button>
                             </div>
                         </div>

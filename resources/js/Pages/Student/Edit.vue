@@ -51,7 +51,7 @@ const submit = () => {
     <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Students
+                Estudiantes
             </h2>
         </template>
         <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -64,10 +64,10 @@ const submit = () => {
                                     <h3
                                         class="text-lg leading-6 font-medium text-gray-900"
                                     >
-                                        Student Information
+                                        Información de Estudiante
                                     </h3>
                                     <p class="mt-1 text-sm text-gray-500">
-                                        Use this form to create a new student.
+                                        Usa este formulario para crear un nuevo usuario.
                                     </p>
                                 </div>
 
@@ -76,7 +76,7 @@ const submit = () => {
                                         <label
                                             for="name"
                                             class="block text-sm font-medium text-gray-700"
-                                            >Name</label
+                                            >Nombre</label
                                         >
                                         <input
                                             v-model="form.name"
@@ -121,7 +121,7 @@ const submit = () => {
                                         <label
                                             for="class_id"
                                             class="block text-sm font-medium text-gray-700"
-                                            >Class</label
+                                            >Clases</label
                                         >
                                         <select
                                             v-model="form.class_id"
@@ -133,7 +133,7 @@ const submit = () => {
                                             }"
                                         >
                                             <option value="">
-                                                Select a Class
+                                                Seleccione una clase
                                             </option>
                                             <option
                                                 v-for="item in classes.data"
@@ -153,7 +153,7 @@ const submit = () => {
                                         <label
                                             for="section_id"
                                             class="block text-sm font-medium text-gray-700"
-                                            >Section</label
+                                            >Sección</label
                                         >
                                         <select
                                             v-model="form.section_id"
@@ -165,7 +165,7 @@ const submit = () => {
                                             }"
                                         >
                                             <option value="">
-                                                Select a Section
+                                                Seleccione una Sección
                                             </option>
                                             <option
                                                 v-for="section in sections.data"
@@ -194,7 +194,7 @@ const submit = () => {
                                     type="submit"
                                     class="bg-indigo-600 border border-transparent rounded-md shadow-sm py-2 px-4 inline-flex justify-center text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                                 >
-                                    Update
+                                    Actualizar
                                 </button>
                             </div>
                         </div>
