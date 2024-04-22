@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classes;
+use App\Models\Section;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Http\Resources\ClassResource;
@@ -36,7 +37,10 @@ class StudentController extends Controller
 
     public function create()
     {
-        $classes = ClassResource::collection(Classes::all());
+        $allowedClasses = ['PHP Laravel Vue', 'Node.js React.js', '.NET Angular'];
+        
+        // Filtrar las clases permitidas
+        $classes = ClassResource::collection(Classes::whereIn('name', $allowedClasses)->get());
 
         return inertia('Student/Create', [
             'classes' => $classes
@@ -45,6 +49,11 @@ class StudentController extends Controller
 
     public function store(StoreStudentRequest $request)
     {
+        $request->validate([
+            'class_id' => 'required|in:PHP Laravel Vue,Node.js React.js,.NET Angular',
+            // Asegúrate de tener las reglas de validación necesarias para los otros campos
+        ]);
+
         Student::create($request->validated());
 
         return redirect()->route('students.index');
@@ -52,16 +61,27 @@ class StudentController extends Controller
 
     public function edit(Student $student)
     {
-        $classes = ClassResource::collection(Classes::all());
+        $allowedClasses = ['PHP Laravel Vue', 'Node.js React.js', '.NET Angular'];
+        
+        $classes = ClassResource::collection(Classes::whereIn('name', $allowedClasses)->get());
+
+        // Obtener las secciones correspondientes a la clase del estudiante
+        $sections = Section::where('class_id', $student->class_id)->get();
 
         return inertia('Student/Edit', [
             'student' => StudentResource::make($student),
-            'classes' => $classes
+            'classes' => $classes,
+            'sections' => $sections
         ]);
     }
 
     public function update(UpdateStudentRequest $request, Student $student)
     {
+        $request->validate([
+            'class_id' => 'required|in:PHP Laravel Vue,Node.js React.js,.NET Angular',
+            // Asegúrate de tener las reglas de validación necesarias para los otros campos
+        ]);
+
         $student->update($request->validated());
 
         return redirect()->route('students.index');
